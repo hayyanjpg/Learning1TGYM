@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styledashboard.css') }}">
+    <style>
+        .content-section {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Halaman Admin</h1>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <a href="{{ url_for('market') }}">Market</a>
+            <a href="#" id="menuDashboard">Dashboard</a>
+            <a href="#" id="menuMembership">Membership</a>
+            <a href="#" id="menuProduk">Produk</a>
+            <a href="#" id="menuKelolaAdmin">Kelola Admin</a>
+            <a href="{{ url_for('admin_login') }}">keluar</a>
+
+        </div>
+
+        <div class="content">
+            <div id="dashboardSection" class="content-section">
+                <h2>Selamat Datang di Halaman Admin</h2>
+                <p>Kelola data aplikasi Anda melalui halaman admin ini.</p>
+            </div>
+
+            <div id="membershipSection" class="content-section">
+
+                <section id="addMembership">
+                    <h2>Tambah Membership</h2>
+                    <form id="addMembershipForm">
+                        <input type="text" name="membership_id" placeholder="ID Membership" required>
+            <input type="text" name="type" placeholder="Tipe Membership" required>
+            <input type="text" name="duration" placeholder="Durasi (misal: 1 Bulan)" required>
+            <input type="text" name="price" placeholder="Harga" required>
+            <select name="status" required>
+                <option value="">Pilih Status</option>
+                <option value="Aktif">Aktif</option>
+                <option value="Tidak Aktif">Tidak Aktif</option>
+            </select>
+            <button type="submit">Tambah Membership</button>
+                    </form>
+
+                </section>
+
+                <section id="deleteMembership">
+                    <h2>Hapus Membership</h2>
+                    <form id="deleteMembershipForm">
+                        <input type="text" name="membership_id" placeholder="ID Membership" required>
+                        <button type="submit">Hapus Membership</button>
+                    </form>
+                </section>
+
+                <section id="listMembership">
+                    <h2>Daftar Anggota Membership</h2>
+                    <button id="viewMembershipList">Lihat Daftar Membership</button>
+                </section>
+
+            </div>
+            <div id="listMembershipSection" class="content-section">
+                <h2>Daftar Anggota Membership</h2>
+                <table border="1" id="membershipTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Tanggal Bergabung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data anggota akan dimuat di sini -->
+                    </tbody>
+                </table>
+                <button id="backToMembership">Kembali</button>
+            </div>
+
+
+            <div id="produkSection" class="content-section">
+                <section id="addProduct">
+                    <h2>Tambah Produk</h2>
+                    <form id="addProductForm" action="{{ url_for('add_product') }}" method="POST">
+                        <input type="text" name="idproduk" placeholder="ID Produk" required>
+                        <input type="text" name="name" placeholder="Nama Produk" required>
+                        <input type="text" name="price" placeholder="Harga" required>
+                        <input type="text" name="stock" placeholder="Stock Produk" required>
+                        <textarea name="description" placeholder="Deskripsi" required></textarea>
+                        <button type="submit">Tambah Produk</button>
+                    </form>
+
+                </section>
+
+                <section id="updateProduct">
+                    <h2>Update Produk</h2>
+                    <form id="updateProductForm">
+                        <input type="text" name="product_id" placeholder="ID Produk" required>
+                        <input type="text" name="name" placeholder="Nama Produk Baru" required>
+                        <input type="text" name="price" placeholder="Harga Baru" required>
+                        <textarea name="description" placeholder="Deskripsi Baru" required></textarea>
+                        <input type="text" name="stock" placeholder="Stock Grup" required>
+                        <button type="submit">Update Produk</button>
+                    </form>
+                </section>
+
+                <section id="deleteProduct">
+                    <h2>Hapus Produk</h2>
+                    <form id="deleteProductForm">
+                        <input type="text" name="product_id" placeholder="ID Produk" required>
+                        <button type="submit">Hapus Produk</button>
+                    </form>
+                </section>
+            </div>
+
+            <div id="kelolaAdminSection" class="content-section">
+                <section id="addAdmin">
+                    <h2>Tambah Admin</h2>
+                    <form id="addAdminForm" action="{{ url_for('add_admin') }}" method="POST">
+                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="tel" name="phone" placeholder="Nomor Telepon" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <button type="submit">Tambah Admin</button>
+                    </form>
+
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <p>© TEKKOM GYM</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuDashboard = document.getElementById('menuDashboard');
+            const menuMembership = document.getElementById('menuMembership');
+            const menuProduk = document.getElementById('menuProduk');
+            const menuKelolaAdmin = document.getElementById('menuKelolaAdmin');
+
+            const dashboardSection = document.getElementById('dashboardSection');
+            const membershipSection = document.getElementById('membershipSection');
+            const produkSection = document.getElementById('produkSection');
+            const kelolaAdminSection = document.getElementById('kelolaAdminSection');
+
+            const sections = [dashboardSection, membershipSection, produkSection, kelolaAdminSection];
+
+            const viewMembershipList = document.getElementById('viewMembershipList');
+            const backToMembership = document.getElementById('backToMembership');
+
+            viewMembershipList.addEventListener('click', () => {
+                // Simulasikan data anggota (di aplikasi nyata, data ini akan berasal dari server)
+                const data = [{
+                    id: 1,
+                    nama: 'John Doe',
+                    email: 'john@example.com',
+                    tanggal: '2024-01-01'
+                }, {
+                    id: 2,
+                    nama: 'Jane Smith',
+                    email: 'jane@example.com',
+                    tanggal: '2024-02-15'
+                }, ];
+
+                const tbody = document.querySelector('#membershipTable tbody');
+                tbody.innerHTML = '';
+                data.forEach(item => {
+                    const row = `<tr>
+            <td>${item.id}</td>
+            <td>${item.nama}</td>
+            <td>${item.email}</td>
+            <td>${item.tanggal}</td>
+        </tr>`;
+                    tbody.innerHTML += row;
+                });
+
+                showSection(listMembershipSection);
+            });
+
+            backToMembership.addEventListener('click', () => showSection(membershipSection));
+
+
+            function showSection(sectionToShow) {
+                sections.forEach(section => section.style.display = 'none');
+                sectionToShow.style.display = 'block';
+
+                const menuKeluar = document.getElementById('menuKeluar');
+                menuKeluar.addEventListener('click', () => {
+                    window.location.href = 'index.html';
+                });
+
+            }
+
+            menuDashboard.addEventListener('click', () => showSection(dashboardSection));
+            menuMembership.addEventListener('click', () => showSection(membershipSection));
+            menuProduk.addEventListener('click', () => showSection(produkSection));
+            menuKelolaAdmin.addEventListener('click', () => showSection(kelolaAdminSection));
+
+
+            // Tampilkan Dashboard sebagai default
+            showSection(dashboardSection);
+        });
+    </script>
+
+</body>
+
+</html>

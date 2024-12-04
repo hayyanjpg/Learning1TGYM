@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>T-GYM</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="static/css/style.css"> 
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">TEKKOM-GYM</div>
+        <div class="nav-links">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#anggota"><i class="fas fa-users"></i> Anggota</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> Tentang Kami</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="#class-schedule"><i class="fas fa-calendar-alt"></i> Kelas</a>
+        </div>
+    </div>
+    <div class="hero" id="home">
+        <div class="content">
+            <h1>Tekkom Gym</h1>
+            <p>Bakar kalori dengan senang dan ringan</p>
+            <p>Dengan latihan yang dilakukan oleh instruktur yang kompeten, kami menjamin hasil yang anda inginkan akan tercapai!</p>
+            <a class="btn" href="{{ url_for('login') }}">Gabung Sekarang</a>
+            <!-- Tambahkan tombol untuk login admin -->
+            <a class="btn" href="{{ url_for('admin_login') }}">Admin Login</a> <!-- Tombol login admin -->
+        </div>
+        <div class="image">
+            <img alt="foto1" height="400" src="https://gharexpert.com/User_Images/323201715943.jpg" width="400"/>
+        </div>
+    </div>
+    <div class="motivation">"Jangan pernah menyerah, setiap langkah kecil membawa kita lebih dekat ke tujuan besar!"</div>
+    <div class="container" id="anggota">
+        <div class="header"><h1>Kenapa Tekkkom Gym terbaik buat kamu?</h1></div>
+        <div class="features">
+            <div class="feature"><i class="fas fa-user"></i><p>200+ Member Aktif</p></div>
+            <div class="feature"><i class="fas fa-chalkboard-teacher"></i><p>10+ Kelas</p></div>
+            <div class="feature"><i class="fas fa-user-tie"></i><p>20+ Pelatih Pribadi</p></div>
+            <div class="feature"><i class="fas fa-dumbbell"></i><p>50+ Alat Premium</p></div>
+        </div>
+        <div class="content">
+            <h2>Gym Terbaik</h2>
+            <p>Gym premium & terjangkau kini ada di Purwokerto.</p>
+            <p>Gym dengan fasilitas yang premium serta desain ruangan yang modern, kami juga punya 20+ variasi kelas yang bisa diakses gratis setiap harinya.</p>
+            <p>Ada juga layanan Pelatih pribadi bersertifikasi internasional dengan harga yang cukup terjangkau untuk membantu mencapai dan melampaui tujuan kebugaranmu.</p>
+            <p>Semua ini kami lakukan untuk memenuhi mimpi kami, yaitu memberikan kemudahan akses ke hidup sehat bagi lebih banyak orang di Indonesia.</p>
+        </div>
+    </div>
+    <div class="class-container" id="class-schedule">
+        <div class="class-header"><i class="fas fa-dumbbell icon"></i><h2>Jenis Kelas</h2></div>
+        <div class="class-item">
+            <i class="fas fa-spa icon"></i>
+            <div class="content">
+                <h2>Mind & Body Class</h2>
+                <p>Memenuhi ruangan dengan semangat! Selain mampu memperbaiki fungsi tubuh dan membakar kalori, kelas MIND & BODY juga bermanfaat memperbaiki denyut jantung, tekanan darah, dan pernapasan.</p>
+            </div>
+        </div>
+        <div class="timeline"></div>
+        <div class="class-item">
+            <i class="fas fa-heartbeat icon"></i>
+            <div class="content">
+                <h2>Kardio Class</h2>
+                <p>Memenuhi ruangan dengan semangat! Selain mampu memperbaiki fungsi tubuh dan membakar kalori, kelas CARDIO juga bermanfaat memperbaiki denyut jantung, tekanan darah, dan pernapasan.</p>
+            </div>
+        </div>
+        <div class="timeline"></div>
+        <div class="class-item">
+            <i class="fas fa-music icon"></i>
+            <div class="content">
+                <h2>Dance Class</h2>
+                <p>Dance Class di Tekkom Gym bikin kamu gerak sambil nikmatin musik seru, bakar kalori, dan kuatkan otot. Cocok buat semua level, kelas ini penuh energi dan pastinya fun!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="about">
+        <div class="header"><h1>Tentang Kami</h1></div>
+        <div class="content">
+            <p>Tekkom Gym adalah pusat kebugaran terkemuka di Indonesia yang berdedikasi untuk membantu Anda mencapai tujuan kebugaran dengan layanan dan fasilitas premium. Kami percaya bahwa setiap individu memiliki potensi untuk hidup sehat dan bugar. Dengan tim instruktur berpengalaman dan bersertifikasi internasional, kami siap mendukung Anda dalam perjalanan kebugaran Anda. Kami menawarkan berbagai program latihan yang disesuaikan dengan kebutuhan Anda, mulai dari penurunan berat badan hingga peningkatan massa otot, serta layanan konsultasi nutrisi untuk membantu Anda mengatur pola makan yang sehat dan seimbang.</p>
+
+<p>Kami sangat memperhatikan kebersihan dan kenyamanan fasilitas kami, sehingga Anda dapat berlatih dengan aman dan nyaman. Selain itu, Tekkom Gym juga dilengkapi dengan fasilitas tambahan seperti sauna dan kolam renang untuk relaksasi setelah sesi latihan yang intens. Bergabunglah dengan kami hari ini dan mulailah perjalanan Anda menuju hidup yang lebih sehat dan bugar. Setiap langkah kecil yang Anda ambil bersama kami akan membawa Anda lebih dekat ke tujuan besar Anda!</p></div>
+    </div>
+    <div class="container" id="contact">
+        <div class="header"><h1>Contact Us</h1></div>
+        <div class="content">
+            <p>Untuk informasi lebih lanjut, hubungi kami di:</p>
+            <p>Email: info@tekkkomgym.com</p>
+            <div class="contact-info">
+                <a href="https://wa.me/6289529892817" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <p>WhatsApp: +62 895 2989 2817</p>
+            </div>
+            <div class="contact-info">
+                <a href="https://www.instagram.com/tekkkomgym" target="_blank"><i class="fab fa-instagram"></i></a>
+                <p>Instagram: @tekkkomgym</p>
+            </div>
+            <p>Alamat: Jl. Sunan Kalijaga Gg 1 RT 06 / 01 No. 06, Banyumas, Jawa Tengah 53146, Indonesia</p>
+        </div>
+    </div>
+    <a class="whatsapp-float" href="https://wa.me/6289529892817" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</body>
+</html>

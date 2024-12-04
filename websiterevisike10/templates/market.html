@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Market - T-GYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="static/css/stylemarket.css"> 
+    <link rel= 
+</head>
+<body class="bg-white">
+    <header class="header">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1>Market T-GYM</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('market') }}">Market</a></li>
+                    <li><a href="{{ url_for('login') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+            <li class="alert alert-{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+    <main class="container mx-auto p-4">
+        
+        <section class="products">
+            <h2>Produk Gym</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="product-item">
+                    <img alt="Image of a pair of dumbbells" src="https://storage.googleapis.com/a1aa/image/BIaQrdrArkYBONaHzJdabiMePwAcKPFZpHZezE2pSS3a1wxTA.jpg"/>
+                    <h3>Dumbbells</h3>
+                    <p>Sepasang dumbbell untuk latihan kekuatan.</p>
+                    <p class="price">Harga: Rp 500,000</p>
+                    <p class="stock">Stok Tersedia: </p>
+                    <a class="buy-button" href="https://wa.me/6289529892817?text=Halo,%20saya%20ingin%20membeli%20Dumbbells%20seharga%20Rp%20500,000" target="_blank">Beli</a>
+                </div>
+                <div class="product-item">
+                    <img alt="Image of a resistance band" src="https://storage.googleapis.com/a1aa/image/AJGVLcM0lAaGBNEvYexQufapFOJGaFqOGRp3gJAJuJNfqhjnA.jpg"/>
+                    <h3>Resistance Band</h3>
+                    <p>Pita resistensi untuk latihan kekuatan dan peregangan.</p>
+                    <p class="price">Harga: Rp 150,000</p>
+                    <p class="stock">Stok Tersedia: </p>
+                    <a class="buy-button" href="https://wa.me/6289529892817?text=Halo,%20saya%20ingin%20membeli%20Resistance%20Band%20seharga%20Rp%20150,000" target="_blank">Beli</a>
+                </div>
+                <div class="product-item">
+                    <img alt="Image of a yoga mat" src="https://storage.googleapis.com/a1aa/image/8mSfbemBswu4IExhou2Fi1AQgQBR4wBlQrpl9q5sQmTeqhjnA.jpg"/>
+                    <h3>Yoga Mat</h3>
+                    <p>Matras yoga untuk latihan yoga dan latihan lantai lainnya.</p>
+                    <p class="price">Harga: Rp 300,000</p>
+                    <p class="stock">Stok Tersedia: </p>
+                    <a class="buy-button" href="https://wa.me/6289529892817?text=Halo,%20saya%20ingin%20membeli%20Yoga%20Mat%20seharga%20Rp%20300,000" target="_blank">Beli</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="products">
+            <h2>Makanan dan Minuman</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="product-item">
+                    <img alt="Image of a protein powder container" src="https://storage.googleapis.com/a1aa/image/Myd6zQhbk6aXKFciez7dfbbexfeome1OVObvdzExDnxLXNc8E.jpg"/>
+                    <h3>Protein Powder</h3>
+                    <p>Suplemen protein untuk meningkatkan asupan protein.</p>
+                    <p class="price">Harga: Rp 400,000</p>
+                    <p class="stock">Stok Tersedia: </p>
+                    <a class="buy-button" href="https://wa.me/6289529892817?text=Halo,%20saya%20ingin%20membeli%20Protein%20Powder%20seharga%20Rp%20400,000" target="_blank">Beli</a>
+                </div>
+                <div class="product-item">
+                    <img alt="energy bar" src="https://cf.shopee.co.id/file/513f3b470d1b2a2c05745315f7556cff"/>
+                    <h3>Energy Bar</h3>
+                    <p>Snack bar untuk memberikan energi cepat.</p>
+                    <p class="price">Harga: Rp 15,000</p>
+                    <p class="stock">Stok Tersedia: </p>
+                    <a class="buy-button" href="https://wa.me/6289529892817?text=Halo,%20saya%20ingin%20membeli%20Energy%20Bar%20seharga%20Rp%2050,000" target="_blank">Beli</a>
+                </div>
+                <div class="product-item">
+                    <img alt="MINUMAN ENERGI" src="https://down-id.img.susercontent.com/file/id-11134207-7r98q-lluqr43xsk2za5"/>
+                    <h3>Sports Drink</h3>
+                    <p>Minuman olahraga untuk menghidrasi dan mengisi ulang elektrolit.</p>
+                    <p class="price">Harga: Rp 20,000</p>
+                    <p class="stock">Stok Tersedia: </p>
+                    <a class="buy-button" href="https://wa.me/6289529892817?text=Halo,%20saya%20ingin%20membeli%20Sports%20Drink%20seharga%20Rp%2020,000" target="_blank">Beli</a>
+                </div>
+            </div>
+        </section>
+        
+            <main class="container mx-auto p-4">
+                <section class="membership">
+                    <h2>Membership</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="membership-item">
+                            <h3>Membership Bulanan</h3>
+                            <p>Dapat memilih 1 kelas khusus serta bebas menggunakan semua alat khusus member GYM</p>
+                            <p class="price">Harga: Rp 150,000/bulan</p>
+                            <p class="stock">Stok Tersedia: </p>
+                            <button id="buyMonthly" class="buy-button">Beli</button>
+                        </div>
+                        <div class="membership-item">
+                            <h3>Membership VIP Bulanan</h3>
+                            <p>Mendapatkan bimbingan dari Instruktur Profesional serta bebas menggunakan alat khusus GYM dan ruang tunggu VIP.</p>
+                            <p class="price">Harga: Rp 500,000/Bulan</p>
+                            <p class="stock">Stok Tersedia: </p>
+                            <button id="buyVIP" class="buy-button">Beli</button>
+                        </div>
+                    </div>
+                </section>
+        
+                <!-- Formulir Pengisian Data -->
+                <div id="membershipForm" style="display:none; margin-top: 20px;">
+                    <h2>Formulir Pembelian Membership</h2>
+                    <form id="purchaseForm">
+                        <input type="text" name="membership_type" id="membership_type" placeholder="Tipe Membership" readonly required>
+                        <input type="number" name="duration" placeholder="Durasi (minimal 1 bulan)" required>
+                        <input type="text" name="phone" placeholder="No Telepon" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="name" placeholder="Nama" required>
+                        <input type="text" name="address" placeholder="Alamat" required>
+                        <button type="submit">Kirim</button>
+                    </form>
+                </div>
+            </main>
+        
+            <footer class="footer">
+                <div>
+                    <p>© TEKKOM GYM</p>
+                </div>
+            </footer>
+        
+            <!-- Panggil script.js di bagian bawah -->
+            <script src="static/js/script.js"></script>
+        </body>
+        </html>
+        

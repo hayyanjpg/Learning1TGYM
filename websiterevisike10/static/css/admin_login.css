@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --mainColor: #89216b;
+    --whiteColor: #ffffff;
+    --titleColor: #555555;
+    --labelColor: #333333;
+}
+
+body {
+    background: linear-gradient(to right, #da4453, var(--mainColor));
+    font-weight: 400;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+}
+
+/* Wrapper Styles */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Mengisi tinggi layar */
+}
+
+/* Form Container Styles */
+.form-container {
+    background-color: var(--whiteColor); /* Warna latar belakang form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+    width: 300px; /* Lebar form */
+}
+
+/* Heading Styles */
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--titleColor); /* Warna teks */
+}
+
+/* Form Group Styles */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Lebar penuh */
+    padding: 10px;
+    border: 1px solid var(--labelColor); /* Border */
+    border-radius: 5px; /* Sudut melengkung */
+    font-size: 16px; /* Ukuran font */
+}
+
+/* Input Focus Styles */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: var(--mainColor); /* Warna border saat fokus */
+    outline: none; /* Menghilangkan outline default */
+}
+
+/* Button Styles */
+.btn {
+    width: 100%; /* Lebar penuh */
+    padding: 10px;
+    background-color: var(--mainColor); /* Warna tombol */
+    color: var(--whiteColor); /* Warna teks tombol */
+    border: none; /* Tanpa border */
+    border-radius: 5px; /* Sudut melengkung */
+    font-size: 16px; /* Ukuran font */
+    cursor: pointer; /* Menunjukkan bahwa ini adalah tombol */
+}
+
+/* Button Hover Styles */
+.btn:hover {
+    background-color: #0056b3; /* Warna tombol saat hover */
+}
+
+/* Link Styles */
+.link {
+    text-align: center; /* Rata tengah */
+    margin-top: 10px; /* Jarak atas */
+}
+
+.link a {
+    color: var(--mainColor); /* Warna link */
+    text-decoration: none; /* Tanpa garis bawah */
+}
+
+.link a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}

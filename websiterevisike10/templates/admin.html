@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/styleadmin.css">
+    <title>Admin - T-GYM</title>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#addProduct">Tambah Produk</a></li>
+                <li><a href="#updateProduct">Update Produk</a></li>
+                <li><a href="#updateMembership">Update Membership</a></li>
+                <li><a href="#deleteMembership">Hapus Membership</a></li>
+                <li><a href="#addAdmin">Tambah Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="addProduct">
+            <h2>Tambah Produk</h2>
+            <form id="addProductForm">
+                <input type="text" placeholder="Nama Produk" required>
+                <input type="text" placeholder="Harga" required>
+                <textarea placeholder="Deskripsi" required></textarea>
+                <button type="submit">Tambah Produk</button>
+            </form>
+        </section>
+
+        <section id="updateProduct">
+            <h2>Update Produk</h2>
+            <form id="updateProductForm">
+                <input type="text" placeholder="ID Produk" required>
+                <input type="text" placeholder="Nama Produk" required>
+                <input type="text" placeholder="Harga" required>
+                <textarea placeholder="Deskripsi" required></textarea>
+                <button type="submit">Update Produk</button>
+            </form>
+        </section>
+
+        <section id="updateMembership">
+            <h2>Update Membership</h2>
+            <form id="updateMembershipForm">
+                <input type="text" placeholder="ID Membership" required>
+                <input type="text" placeholder="Nama Membership" required>
+                <input type="text" placeholder="Harga" required>
+                <button type="submit">Update Membership</button>
+            </form>
+        </section>
+
+        <section id="deleteMembership">
+            <h2>Hapus Membership</h2>
+            <form id="deleteMembershipForm">
+                <input type="text" placeholder="ID Membership" required>
+                <button type="submit">Hapus Membership</button>
+            </form>
+        </section>
+
+        <section id="addAdmin">
+            <h2>Tambah Admin</h2>
+            <form id="addAdminForm">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Tambah Admin</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© TEKKOM GYM</p>
+    </footer>
+
+
+</body>
+</html>

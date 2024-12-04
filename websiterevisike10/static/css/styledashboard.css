@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Variables */
+:root {
+    --mainColor: #89216b;
+    --whiteColor: #ffffff;
+    --titleColor: #555555;
+    --labelColor: #333333;
+    --clr-danger: #ff7782;
+    --clr-success: #41f1b6;
+    --clr-info-dark: #7d8da1;
+    --clr-info-light: #dce1eb;
+    --clr-dark: #363949;
+    --clr-warning: #ff4edc;
+    --clr-light: rgba(132, 139, 200, 0.18);
+    --clr-color-background: #f6f6f9;
+    --card-border-radius: 1rem;
+    --border-radius-1: 0.4rem;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--clr-color-background);
+    color: var(--titleColor);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: var(--whiteColor);
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--mainColor);
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--labelColor);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-1);
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--clr-light);
+}
+
+/* Main Container */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1.5rem;
+    padding: 1rem;
+    flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--whiteColor);
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--titleColor);
+}
+
+.sidebar a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-1);
+    margin-bottom: 0.5rem;
+    color: var(--labelColor);
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: var(--clr-light);
+}
+
+/* Content Sections */
+.content {
+    background-color: var(--whiteColor);
+    padding: 1rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--mainColor);
+}
+
+.content form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.content input,
+.content textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--clr-info-light);
+    border-radius: var(--border-radius-1);
+}
+
+.content button {
+    padding: 0.5rem;
+    background-color: var(--mainColor);
+    color: var(--whiteColor);
+    border: none;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.content button:hover {
+    background-color: darken(var(--mainColor), 10%);
+}
+
+/* Footer */
+footer {
+    background-color: var(--whiteColor);
+    text-align: center;
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
